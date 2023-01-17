@@ -8,6 +8,7 @@ on:
 
 jobs:
   comment-with-actions:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: "dumb github context"
