@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check user login
-        run: echo "${{ github.event.user.login }}"
+        run: echo '${{ github.event.user.login }}'
         shell: bash
 
       - name: Create comments with api
