@@ -33,7 +33,7 @@ jobs:
       - name: check user login
         run: echo "${{ github.event.user.login }}"
         shell: bash
-        
+
       - name: Create comments with api
         run: |
           gh api -X POST \
@@ -43,6 +43,6 @@ jobs:
             '
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORGANIZATION: ${{ github.event.user.login }}
+          ORGANIZATION: ${{ github.event.owner.login }}
           REPOSITORY: ${{ github.event.repository.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
