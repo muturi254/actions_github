@@ -28,6 +28,7 @@ jobs:
           reactions: '+1'
 
   comment-with-api:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: check user login
@@ -43,6 +44,6 @@ jobs:
             '
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORGANIZATION: ${{ github.event.repository.name }}
+          ORGANIZATION: ${{ github.event.user.login }}
           REPOSITORY: ${{ github.event.repository.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
